@@ -34,6 +34,7 @@ val emiVersion: String by project
 
 version = "$minecraftVersion-$modVersion"
 group = modGroupId
+base.archivesName = modId
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -98,13 +99,10 @@ minecraft {
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             args(
-                "--mod",
-                modId,
+                "--mod", modId,
                 "--all",
-                "--output",
-                file("src/generated/resources/"),
-                "--existing",
-                file("src/main/resources/")
+                "--output", file("src/generated/resources/"),
+                "--existing", file("src/main/resources/")
             )
         }
     }
