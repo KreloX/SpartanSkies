@@ -53,7 +53,7 @@ public class SpartanSkies extends SpartanAddon {
     }
 
     @SuppressWarnings("unused")
-    public static final RegistryObject<CreativeModeTab> SPARTAN_SIMPLEORES_TAB = registerTab(TABS, MODID,
+    public static final RegistryObject<CreativeModeTab> SPARTAN_SKIES_TAB = registerTab(TABS, MODID,
             () -> WEAPONS.get(AQUITE, WeaponType.GREATSWORD).get(),
             (parameters, output) -> ITEMS.getEntries().forEach(item -> output.accept(item.get())));
 
