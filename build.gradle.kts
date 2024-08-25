@@ -175,3 +175,8 @@ tasks.withType<JavaCompile>().configureEach {
     options.encoding = "UTF-8" // Use the UTF-8 charset for Java compilation
 }
 
+mixin {
+    config("$modId.mixins.json")
+    add(sourceSets.main.get(), "$modId.refmap.json")
+}
+

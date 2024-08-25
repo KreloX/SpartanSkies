@@ -1,0 +1,105 @@
+{
+  "type": "spartanweaponry:tag_smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "disabled_type": "dagger",
+      "item": "spartanskies:horizonite_dagger"
+    },
+    {
+      "disabled_type": "parrying_dagger",
+      "item": "spartanskies:horizonite_parrying_dagger"
+    },
+    {
+      "disabled_type": "longsword",
+      "item": "spartanskies:horizonite_longsword"
+    },
+    {
+      "disabled_type": "katana",
+      "item": "spartanskies:horizonite_katana"
+    },
+    {
+      "disabled_type": "saber",
+      "item": "spartanskies:horizonite_saber"
+    },
+    {
+      "disabled_type": "rapier",
+      "item": "spartanskies:horizonite_rapier"
+    },
+    {
+      "disabled_type": "greatsword",
+      "item": "spartanskies:horizonite_greatsword"
+    },
+    {
+      "disabled_type": "battle_hammer",
+      "item": "spartanskies:horizonite_battle_hammer"
+    },
+    {
+      "disabled_type": "warhammer",
+      "item": "spartanskies:horizonite_warhammer"
+    },
+    {
+      "disabled_type": "spear",
+      "item": "spartanskies:horizonite_spear"
+    },
+    {
+      "disabled_type": "halberd",
+      "item": "spartanskies:horizonite_halberd"
+    },
+    {
+      "disabled_type": "pike",
+      "item": "spartanskies:horizonite_pike"
+    },
+    {
+      "disabled_type": "lance",
+      "item": "spartanskies:horizonite_lance"
+    },
+    {
+      "disabled_type": "longbow",
+      "item": "spartanskies:horizonite_longbow"
+    },
+    {
+      "disabled_type": "heavy_crossbow",
+      "item": "spartanskies:horizonite_heavy_crossbow"
+    },
+    {
+      "disabled_type": "throwing_knife",
+      "item": "spartanskies:horizonite_throwing_knife"
+    },
+    {
+      "disabled_type": "tomahawk",
+      "item": "spartanskies:horizonite_tomahawk"
+    },
+    {
+      "disabled_type": "javelin",
+      "item": "spartanskies:horizonite_javelin"
+    },
+    {
+      "disabled_type": "boomerang",
+      "item": "spartanskies:horizonite_boomerang"
+    },
+    {
+      "disabled_type": "battleaxe",
+      "item": "spartanskies:horizonite_battleaxe"
+    },
+    {
+      "disabled_type": "flanged_mace",
+      "item": "spartanskies:horizonite_flanged_mace"
+    },
+    {
+      "disabled_type": "glaive",
+      "item": "spartanskies:horizonite_glaive"
+    },
+    {
+      "disabled_type": "quarterstaff",
+      "item": "spartanskies:horizonite_quarterstaff"
+    },
+    {
+      "disabled_type": "scythe",
+      "item": "spartanskies:horizonite_scythe"
+    }
+  ],
+  "result_tag": "blue_skies:nuggets/horizonite"
+}

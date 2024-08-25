@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "krelox.spartanskies.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "spartanskies.refmap.json",
+  "mixins": [
+    "PlayerHooksMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
