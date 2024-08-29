@@ -52,7 +52,7 @@ public class SpartanSkies extends SpartanAddon {
 
     public static final SpartanMaterial PYROPE = material(SkiesItemTier.PYROPE, SkiesItemTags.PYROPE);
     public static final SpartanMaterial AQUITE = material(SkiesItemTier.AQUITE, SkiesItemTags.AQUITE);
-    public static final SpartanMaterial DIOPSIDE = material(SkiesItemTier.DIOPSIDE, SkiesItemTags.DIOPSIDE);
+    public static final SpartanMaterial DIOPSIDE = material(SkiesItemTier.DIOPSIDE, SkiesItemTags.DIOPSIDE).setAttackSpeedModifier(-0.4);
     public static final SpartanMaterial CHAROITE = material(SkiesItemTier.CHAROITE, SkiesItemTags.CHAROITE);
     public static final SpartanMaterial HORIZONITE = material(SkiesItemTier.HORIZONITE, SkiesItemTags.HORIZONITE, SCORCHING);
 
