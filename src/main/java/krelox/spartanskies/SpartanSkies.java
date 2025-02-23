@@ -38,10 +38,12 @@ public class SpartanSkies extends SpartanAddon {
     // Traits
     public static final RegistryObject<WeaponTrait> SCORCHING = registerTrait(TRAITS,
             new BetterWeaponTrait("scorching", MODID, WeaponTrait.TraitQuality.POSITIVE) {
+                @Override
                 public String getDescription() {
                     return String.format(Locale.US, "Sets foes on fire for %d seconds", (int) magnitude);
                 }
 
+                @Override
                 public void onHitEntity(WeaponMaterial material, ItemStack stack, LivingEntity target, LivingEntity attacker, Entity projectile) {
                     target.setSecondsOnFire(((int) magnitude));
                 }
@@ -50,22 +52,26 @@ public class SpartanSkies extends SpartanAddon {
     // Materials
     public static final List<SpartanMaterial> MATERIALS = new ArrayList<>();
 
-    public static final SpartanMaterial PYROPE = material(SkiesItemTier.PYROPE, SkiesItemTags.PYROPE);
+
+    @SuppressWarnings("unused")
+    public static final SpartanMaterial PYROPE = material(SkiesItemTier.PYROPE, SkiesItemTags.PYROPE).setAttackSpeedModifier(0.4);
     public static final SpartanMaterial AQUITE = material(SkiesItemTier.AQUITE, SkiesItemTags.AQUITE);
+    @SuppressWarnings("unused")
     public static final SpartanMaterial DIOPSIDE = material(SkiesItemTier.DIOPSIDE, SkiesItemTags.DIOPSIDE).setAttackSpeedModifier(-0.4);
+    @SuppressWarnings("unused")
     public static final SpartanMaterial CHAROITE = material(SkiesItemTier.CHAROITE, SkiesItemTags.CHAROITE);
     public static final SpartanMaterial HORIZONITE = material(SkiesItemTier.HORIZONITE, SkiesItemTags.HORIZONITE, SCORCHING);
 
     @SafeVarargs
     private static SpartanMaterial material(SkiesItemTier tier, TagKey<Item> repairTag, RegistryObject<WeaponTrait>... traits) {
-        SpartanMaterial material = new SpartanMaterial(tier.name().toLowerCase(), MODID, tier, repairTag, traits);
+        var material = new SpartanMaterial(tier.name().toLowerCase(), MODID, tier, repairTag, traits);
         MATERIALS.add(material);
         return material;
     }
 
     @SuppressWarnings("unused")
     public static final RegistryObject<CreativeModeTab> SPARTAN_SKIES_TAB = registerTab(TABS, MODID,
-            () -> WEAPONS.get(AQUITE, WeaponType.GREATSWORD).get(),
+            () -> WEAPONS.get(AQUITE, WeaponType.RAPIER).get(),
             (parameters, output) -> ITEMS.getEntries().forEach(item -> output.accept(item.get())));
 
     public SpartanSkies() {
@@ -80,13 +86,13 @@ public class SpartanSkies extends SpartanAddon {
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
         super.buildCraftingRecipes(consumer);
-        ImmutableMap.Builder<String, Item> mapBuilder = new ImmutableMap.Builder<>();
+        var mapBuilder = new ImmutableMap.Builder<String, Item>();
         WEAPONS.forEach((pair, weapon) -> {
             if (pair.first().equals(HORIZONITE)) {
-                mapBuilder.put(pair.second().name().toLowerCase(), weapon.get());
+                mapBuilder.put(pair.second().name().toLowerCase(Locale.US), weapon.get());
             }
         });
-        ImmutableMap<String, Item> ingredientMap = mapBuilder.build();
+        var ingredientMap = mapBuilder.build();
         TagCookingRecipeBuilder.smelting(ingredientMap, RecipeCategory.MISC, SkiesItemTags.HORIZONITE_NUGGETS, 0.1f, 200)
                 .save(consumer, new ResourceLocation(MODID, HORIZONITE.getMaterialName() + "_nugget_from_smelting_" + HORIZONITE.getMaterialName() + "_weapons"));
         TagCookingRecipeBuilder.blasting(ingredientMap, RecipeCategory.MISC, SkiesItemTags.HORIZONITE_NUGGETS, 0.1f, 100)
